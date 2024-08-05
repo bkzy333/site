@@ -15,8 +15,12 @@
     var isWeixin = ua.indexOf('micromessenger') != -1;
     var isAndroid = ua.indexOf('android') != -1;
     var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
+// 创建一个 URL 对象
+var url = new URL(urlParmStr);
 
-    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2><br />不得不看的内容，复制到浏览器打开吧：<b style=\"color:red\"> + urlParmStr + </b>"
+// 使用 searchParams 获取 url 参数的值
+var extractedUrl = url.searchParams.get("url");
+    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2><br />复制到浏览器打开：<br /><b style=\"color:red\">" + extractedUrl + "</b>"
 
     // 判断是不是在微信客户端打开
     if(isWeixin || isQQ) {
