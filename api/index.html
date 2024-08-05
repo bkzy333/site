@@ -20,7 +20,7 @@ var myurl = new URL(urlParmStr);
 
 // 使用 searchParams 获取 url 参数的值
 var extractedUrl = myurl.searchParams.get("url");
-    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2><br />复制到浏览器打开：<br /><b style=\"color:red\">" + extractedUrl + "</b>"
+    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2><br />复制到浏览器打开：<br /><b style=\"color:red\">" + urlParmStr + "</b>"
 
     // 判断是不是在微信客户端打开
     if(isWeixin || isQQ) {
