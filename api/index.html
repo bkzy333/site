@@ -4,6 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
     <title>中转</title>
+    <style>
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        margin: auto;
+    }
+
+    #copy-button {
+        width: 100%;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+#copy-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    </style>
 </head>
 <body>
     <div id="tips" style="font-size:25px;text-align: center;line-height: 50px;"></div>
@@ -15,7 +48,7 @@
     var isWeixin = ua.indexOf('micromessenger') != -1;
     var isAndroid = ua.indexOf('android') != -1;
     var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
-    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2><br /><p id="text-to-copy">urlParmStr</p><br /><button id="copy-button">一键复制</button>"
+    var notice_openBrowser = " <div class="container"><h2>请点击右上角，通过浏览器打开本页面。</h2><br /><p id="text-to-copy">urlParmStr</p><br /><button id="copy-button">一键复制</button></div>"
 
     // 判断是不是在微信客户端打开
     if(isWeixin || isQQ) {
