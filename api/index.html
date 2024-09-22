@@ -15,7 +15,7 @@
     var isWeixin = ua.indexOf('micromessenger') != -1;
     var isAndroid = ua.indexOf('android') != -1;
     var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
-    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2><br />或者手动复制到浏览器打开：<br /><b style=\"color:red\">" + urlParmStr + "</b>"
+    var notice_openBrowser = "<h2>请点击右上角，通过浏览器打开本页面。</h2><br /><p id="text-to-copy">urlParmStr</p><br /><button id="copy-button">一键复制</button>"
 
     // 判断是不是在微信客户端打开
     if(isWeixin || isQQ) {
@@ -37,5 +37,18 @@
     }
 </script>
     <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script><script>LA.init({id:"K8YSQIj3WDtj9gG6",ck:"K8YSQIj3WDtj9gG6"})</script>
+
+    <script>document.getElementById("copy-button").addEventListener("click", function () {
+  const text = document.getElementById("text-to-copy").innerText;
+  navigator.clipboard.writeText(text).then(
+    function () {
+      alert("文本已复制到剪贴板！");
+    },
+    function (err) {
+      alert("无法复制文本: ", err);
+    }
+  );
+});
+</script>
 </body>
 </html>
